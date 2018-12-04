@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>邀请</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+        .top {
+            position: relative;
+            width: 100%;
+        }
+            .top_bg {
+                width: 100%;
+            }
+            .top_a {
+                position: absolute;
+                top: 54%;
+            }
+                .top_btn {
+                    width: 60%;
+                    margin-left: 20%;
+                }
+            .top_copy {
+                position: absolute;
+                top: 73%;
+                width: 56%;
+                margin-left: 22%;
+                height: 8vw;
+                color: white;
+                line-height: 8vw;
+                background: rgba(30,30,30, .15);
+                border-radius: 90px;
+                font-size: 3.5vw;
+            }
+                .top_copy span {
+                    float: left;
+                    letter-spacing: .3vw;
+                    margin-left: 2.5vw;
+                }
+                .top_copy input {
+                    float: left;
+                    width: 30%;
+                    background:none;
+                    border: none;
+                    font-size: 3.5vw;
+                    color: white;
+                    height: 100%;
+                    margin-top: .25vw;
+                    margin-left: 1.5vw;
+                }
+                .btn_copy {
+                    float: left;
+                    margin-left: 4vw;
+                }
+                .top_copy_line {
+                    position: inherit;
+                    height: 40%;
+                    width: 1px;
+                    background: white;
+                    top: 30%;
+                    right: 13.5vw;
+                }
+                @media (max-width: 325px) {
+                    .top_copy_line {
+                        right: 11.4vw;
+                    }
+                }
+
+        .middle {
+            position: relative;
+            margin-top: 2vw;
+        }
+            .middle_title {
+                width: 100%;
+            }  
+                .middle_title img {
+                    width: 60%;
+                    margin-left: 20%;
+                }
+            .middle_content {
+                width: 100%;
+                margin-top: 7vw;
+            }
+                .middle_content img {
+                    width: 90%;
+                    margin-left: 5%;
+                }
+            .middle_friend {
+                width: 100%;
+                margin-top: 4vw;
+                height: 20vw;
+                border-bottom: 2vw solid #F2F6F9;
+            }
+                .middle_friend_child {
+                    float: left;
+                    width: 50%;
+                    text-align: center;
+                }
+                    .middle_friend_child span {
+                        font-size: 3.2vw;
+                        color: #666;
+                    }
+                    .middle_friend_child h2 {
+                        margin-top: 2vw;
+                    }
+        
+        .bottom {
+            position: relative;
+            padding-bottom: 5vw;
+        }
+            .bottom_title {
+                width: 100%;
+                margin-top: 7vw;
+            }
+                .bottom_title img {
+                    width: 60%;
+                    margin-left: 20%;
+                }
+            .bottom ul {
+                width: 86%;
+                margin-left: 7%;
+                font-size: 3.8vw;
+                color: #666;
+                list-style: none;
+            }
+                .bottom ul li {
+                    margin-top: 2.5vw;
+                    line-height: 5.5vw;
+                }
+    .block {
+        position: relative;
+        width: 100%;
+        height: 23vw;
+    }
+    .fixed {
+        position: fixed;
+        bottom: 0;
+        height: 23vw;
+        width: 100%;
+        background: #F6F6F6;
+    }
+        .fixed a {
+            float: left;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+            text-decoration: none;
+        }
+            .fixed a img {
+                width: 50%;
+                margin-top: 2vw;
+            }
+            .fixed a span {
+                display: block;
+                font-size: 3.5vw;
+                color: black;
+                margin-top: 1vw;
+            }
+</style>
+<body>
+    <div class="top">
+        <img class="top_bg" src="images/invite_bg_img.png"/>
+        <a class="top_a" href="function://callapp?f=test&title=高温福利，狂赚8888元&description=0门槛，邀请有效即奖励，最高赚8888元。1元可提现，你来下载提现试试！&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/yuetoutiao/Material/zd_51.png&link=http://url.cn/5UTcSl0&callback=shareDone">
+            <img class="top_btn" src="images/invite_share_btn.png"/>
+        </a>
+        <div class="top_copy">
+            <span>我的邀请码:</span>
+            <input id="keys" type="text" value="12345678" disabled/>
+            <div class="btn_copy">复制</div>
+            <div class="top_copy_line"></div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle_title">
+            <img src="images/invite_reward_title.png"/>
+        </div>
+        <div class="middle_content">
+            <img src="images/invite_rule_timg.png"/>
+        </div>
+        <div class="middle_friend">
+            <div class="middle_friend_child middle_friend_left">
+                <span>成功邀请的好友</span>
+                <h2>0</h2>
+            </div>
+            <div class="middle_friend_child middle_friend_right">
+                <span>好友提供的金币收益</span>
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom_title">
+            <img src="images/invite_rule_title.png"/>
+        </div>
+        <ul>
+            <li>1、分享给好友，让好友下载注册后，填写自己邀请码，即可获得奖励；</li>
+            <li>2、首次邀请好友额外奖励2元，可在[任务中心] -- [新手任务] -- [首次邀请任务]领取；</li>
+            <li>3、好友每天认真阅读2篇文章（400金币），你可获得一次奖励，累计7天获得3元；</li>
+            <li>4、好友每天阅读获得的金币，你可获得同等多的奖励，每年累计可获得20元；</li>
+            <li>5、邀请好友数量无上限，邀请越多奖励越多少。</li>
+        </ul>
+    </div>
+    <div class="block"></div>
+    <div class="fixed">
+        <a href="function://doShare?f=share&title=邀请好友瓜分2亿金币&description=邀请测试&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/assets/shoutu0119.png&link=http://url.cn/5ixHRoG&shareWay=CIRCLE">
+            <img src="images/wxmoments.png"/>
+            <span>朋友圈</span>
+        </a>
+        <a href="function://doShare?f=share&title=邀请好友瓜分2亿金币&description=邀请测试&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/assets/shoutu0119.png&link=http://url.cn/5ixHRoG&shareWay=WEIXIN">
+            <img src="images/wx.png"/>
+            <span>微信</span>
+        </a>
+        <a href="function://doShare?f=share&title=邀请好友瓜分2亿金币&description=邀请测试&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/assets/shoutu0119.png&link=http://url.cn/5ixHRoG&shareWay=QQ">
+            <img src="images/qq.png"/>
+            <span>qq</span>
+        </a>
+        <a href="function://doShare?f=share&title=邀请好友瓜分2亿金币&description=邀请测试&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/assets/shoutu0119.png&link=http://url.cn/5ixHRoG&shareWay=QRCODE">
+            <img src="images/qrcode.png"/>
+            <span>二维码</span>
+        </a>
+    </div>
+</body>
+</html>
+<script>
+    $(function() {
+        function invite() {
+            // this.hostname = "http://and.ytoutiao.net";
+        };
+        invite.prototype = {
+            // 获取参数
+            getQueryString:function(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return unescape(r[2]);
+                }
+                return null;
+            },
+            copyFn() {
+                var Url2 = document.getElementById("keys");//要复制文字的节点 document.getElementById("title1")
+                if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {//区分iPhone设备
+                    window.getSelection().removeAllRanges();//这段代码必须放在前面否则无效
+                    var range = document.createRange();
+                    // 选中需要复制的节点
+                    range.selectNode(Url2);
+                    // 执行选中元素
+                    window.getSelection().addRange(range);
+                    // 执行 copy 操作
+                    var successful = document.execCommand('copy');
+
+                    // 移除选中的元素
+                    window.getSelection().removeAllRanges();
+                } else {
+                    Url2.select(); // 选择对象
+                    document.execCommand("Copy"); // 执行浏览器复制命令
+                    // 移除选中的元素
+                    window.getSelection().removeAllRanges();
+                }
+            },
+            ClickFn() {
+                var that =  this;
+                $(".btn_copy").click(function() {
+                    that.copyFn();
+                });
+            },
+            Init() {
+                var code = this.getQueryString("InviteCode");
+                var numbers = this.getQueryString("InviteNumber");
+                var income = this.getQueryString("InviteIncome");
+
+                $("#keys").val(code);
+                $(".middle_friend_left h2").text(numbers);
+                $(".middle_friend_right h2").text(income);
+            },
+            start() {
+                this.ClickFn();
+                this.Init();
+            }
+        }
+
+        var go = new invite().start();
+    });
+</script>
