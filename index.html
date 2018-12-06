@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>邀请</title>
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src='https://res.wx.qq.com/open/js/jweixin-1.3.0.js'></script>
 </head>
 <style>
     *{
@@ -165,6 +166,7 @@
             }
 </style>
 <body>
+    <div class="wxTool">跳转小程序测试</div>
     <div class="top">
         <img class="top_bg" src="images/invite_bg_img.png"/>
         <a class="top_a" href="function://callapp?f=test&title=高温福利，狂赚8888元&description=0门槛，邀请有效即奖励，最高赚8888元。1元可提现，你来下载提现试试！&image=http://hbhunter.oss-cn-qingdao.aliyuncs.com/yuetoutiao/Material/zd_51.png&link=http://url.cn/5UTcSl0&callback=shareDone">
@@ -278,6 +280,10 @@
                 $("#keys").val(code);
                 $(".middle_friend_left h2").text(numbers);
                 $(".middle_friend_right h2").text(income);
+
+                $(".wxTool").click(function() {
+                    wx.miniProgram.switchTab({url: '/pages/details/index'})
+                });
             },
             start() {
                 this.ClickFn();
