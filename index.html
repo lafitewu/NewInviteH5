@@ -282,6 +282,7 @@
                 $(".middle_friend_right h2").text(income);
 
                 $(".wxTool").click(function() {
+                    console.log('wx跳转');
                     wx.miniProgram.switchTab({url: '/pages/details/index'})
                 });
             },
