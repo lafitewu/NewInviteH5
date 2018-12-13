@@ -246,6 +246,7 @@
                 return null;
             },
             copyFn() {
+                alert("66666");
                 var Url2 = document.getElementById("keys");//要复制文字的节点 document.getElementById("title1")
                 if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {//区分iPhone设备
                     window.getSelection().removeAllRanges();//这段代码必须放在前面否则无效
