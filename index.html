@@ -164,6 +164,11 @@
                 color: black;
                 margin-top: 1vw;
             }
+
+        .top_copy a {
+            color: white;
+            text-decoration: none;
+        }
 </style>
 <body>
     <!-- <div class="wxTool">跳转小程序测试</div> -->
@@ -175,7 +180,7 @@
         <div class="top_copy">
             <span>我的邀请码:</span>
             <input id="keys" type="text" value="12345678" disabled/>
-            <div class="btn_copy">复制</div>
+            <a class="btn_copy" href="function://callapp?f=copyInviteCode">复制</a>
             <div class="top_copy_line"></div>
         </div>
     </div>
@@ -270,7 +275,7 @@
             ClickFn() {
                 var that =  this;
                 $(".btn_copy").click(function() {
-                    that.copyFn();
+                    // that.copyFn();
                 });
             },
             Init() {
