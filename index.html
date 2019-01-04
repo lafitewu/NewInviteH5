@@ -169,6 +169,11 @@
             color: white;
             text-decoration: none;
         }
+
+    .goStudent {
+        display: inline-block;
+        width: 100%;
+    }
 </style>
 <body>
     <!-- <div class="wxTool">跳转小程序测试</div> -->
@@ -191,16 +196,18 @@
         <div class="middle_content">
             <img src="images/invite_rule_timg.png"/>
         </div>
-        <div class="middle_friend">
-            <div class="middle_friend_child middle_friend_left">
-                <span>成功邀请的好友</span>
-                <h2>0</h2>
+        <a class="goStudent" href="function://callapp?f=gotoActivity&activity=student">
+            <div class="middle_friend">
+                <div class="middle_friend_child middle_friend_left">
+                    <span>成功邀请的好友</span>
+                    <h2>0</h2>
+                </div>
+                <div class="middle_friend_child middle_friend_right">
+                    <span>好友提供的金币收益</span>
+                    <h2>0</h2>
+                </div>
             </div>
-            <div class="middle_friend_child middle_friend_right">
-                <span>好友提供的金币收益</span>
-                <h2>0</h2>
-            </div>
-        </div>
+        </a>
     </div>
     <div class="bottom">
         <div class="bottom_title">
